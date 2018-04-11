@@ -4,6 +4,8 @@ var allStores = [];
 var storeTable = document.getElementById('store');
 var storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
+//add property to object for cookies sold each hour and something for //total cookies. eventually print out total cookies as adding hourly //sales array position, similarly for other totals
+
 function CookieStore(location, minCust, maxCust, avgCookie){
   this.location = location;
   this.minCust = minCust;
@@ -17,14 +19,14 @@ CookieStore.prototype.random = function(){
   return Math.floor(Math.random() * (this.maxCust - this.minCust) + 1) + this.minCust;
 };
 
-CookieStore.prototype.genHourlySales = function() {
+CookieStore.prototype.genHourlySales = function(){
   for(var i = 0; i < storeHours.length; i++) {
     var customersPerHour = Math.round(this.random() * this.avgCookie);
     this.hourlySales.push(customersPerHour);
   }
 };
 
-CookieStore.prototype.renderHours = function() {
+CookieStore.prototype.renderHours = function(){
   for(var i = 0; i < storeHours.length; i++){
     var thEle = document.createElement('th');
     thEle.textContent = storeHours[i];
