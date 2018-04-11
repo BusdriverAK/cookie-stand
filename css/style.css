@@ -6,6 +6,11 @@ body{
 .text{
   font-family: 'Roboto Slab', serif;
 }
+
+li.location{
+  list-style-type: circle;
+}
+
 table {
   font-family: 'Roboto Condensed', sans-serif;
   width: 100%;
