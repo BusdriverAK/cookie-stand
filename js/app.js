@@ -1,84 +1,8 @@
 'use strict';
 
-//arrays with values for object properties
-
-// var storeLocation = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
-// var minCust = [23, 3, 11, 20, 2];
-// var maxCust = [65, 24, 38, 38, 16];
-// var cookieSale = [6.3, 1.2, 3.7, 2.3, 4.6];
-
-
-
-
-// // random number generator with a min and max parameter
-
-// var randNum = function randomSales(minCust, maxCust) {
-//   minCust = Math.ceil(minCust);
-//   maxCust = Math.floor(maxCust);
-//   return Math.floor(Math.random() * (maxCust - minCust)+ 1) + minCust;
-// };
-
-
-// // object literal with an attempt at invoking random function after....
-
-// var cookieStore = {
-//   storeLocation: '1st and Pike',
-//   minCust: 23,
-//   maxCust: 65,
-//   cookieSale: 6.3,
-// };
-// cookieStore.sales = function(){
-//   return Math.floor(Math.random() * (maxCust - minCust) +1) + minCust;};
-
-
-
-// // object for each store
-
-// var storePike = {
-//   minCust: 23,
-//   maxCust: 65,
-//   cookieSale: 6.3,
-// };
-// randomSales(storePike);
-// console.log(randNum); 
-
-
-
-// storePike.randomSales = function(){
-//   alert(this);
-// };
-
-
-// console.log(randomSales);
-// console.log(storePike);
-
-// var storeSeatac = {
-//   minCust: 3,
-//   maxCust: 24,
-//   cookieSale: 1.2
-// }
-
-
-
-// // object build for cookie store with properties inside
-// var cookieStore = {
-//   storeLocation:[0],
-//   minCust:[0],
-//   maxCust:[0],
-//   cookieSale:[0]
-// }
-
-// console.log(cookieStore);
-
-// // to rng the sales for each hour.
-// function generateSales(){
-
-// }
-
-
 var allStores = [];
 var storeTable = document.getElementById('store');
-var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
 function CookieStore(location, minCust, maxCust, avgCookie){
   this.location = location;
@@ -137,5 +61,3 @@ seaTac.renderSales();
 seaCenter.renderSales();
 capHill.renderSales();
 alki.renderSales();
-
-console.log(seaTac);
