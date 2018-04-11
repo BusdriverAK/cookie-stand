@@ -1,0 +1,36 @@
+body{
+  background:rgb(231, 231, 231);
+  font-family: 'Roboto Slab', serif;
+}
+
+.text{
+  font-family: 'Roboto Slab', serif;
+}
+
+li.location{
+  list-style-type: circle;
+}
+
+table {
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  margin: 20px auto;
+  table-layout: auto;
+}
+
+.fixed {
+  table-layout: fixed;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border: solid 1px;
+  text-align: center;
+}
