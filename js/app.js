@@ -44,6 +44,18 @@ CookieStore.prototype.renderSales = function(){
   storeTable.appendChild(trEle);
 };
 
+function handleStoreInput(event){
+  event.preventDefault();
+  console.log('form input recieved');
+  var formEle = event.target;
+  var newStore = new CookieStore(formEle.locationin.value, formEle.mincustin.value, formEle.maxcustin.value, formEle.cookiesin.value);
+  console.log(newStore);
+  newStore.renderSales();
+}
+
+var newStoreEle = document.getElementById('add-store');
+newStoreEle.addEventListener('submit', handleStoreInput);
+
 var pike = new CookieStore('1st and Pike', 23, 65, 6.3);
 var seaTac = new CookieStore('SeaTac Airport', 3, 24, 1.2);
 var seaCenter = new CookieStore('Seattle Center', 11, 38, 3.7);
