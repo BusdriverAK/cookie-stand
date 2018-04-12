@@ -34,3 +34,12 @@ td {
   border: solid 1px;
   text-align: center;
 }
+
+#storeform{
+  display: block;
+  font-size: 18px;
+  padding: 4px 2px;
+  border: solid 1px;
+  width: 90px;
+  margin: 2px 0 20px 10px;
+}
