@@ -12,8 +12,13 @@ function CookieStore(location, minCust, maxCust, avgCookie){
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
   this.hourlySales = [];
+  var storeTotal = this.hourlySales.reduce(function(total, amount){
+    return total + amount;});
   allStores.push(this);
 }
+
+CookieStore.prototype.storeTotal = this.hourlySales.reduce(function(total, amount){
+  return total + amount;)
 
 CookieStore.prototype.random = function(){
   return Math.floor(Math.random() * (this.maxCust - this.minCust) + 1) + this.minCust;
@@ -28,12 +33,14 @@ CookieStore.prototype.genHourlySales = function(){
 
 CookieStore.prototype.renderHours = function(){
   var blankEle = document.createElement('td');
+  var rowTotal = document.createElement('td');
   storeTable.appendChild(blankEle);
   for(var i = 0; i < storeHours.length; i++){
     var thEle = document.createElement('th');
     thEle.textContent = storeHours[i];
     storeTable.appendChild(thEle);
   }
+  storeTable.appendChild(rowTotal);
 };
 
 CookieStore.prototype.renderSales = function(){
@@ -61,6 +68,8 @@ function handleStoreInput(event){
 
 var newStoreEle = document.getElementById('add-store');
 newStoreEle.addEventListener('submit', handleStoreInput);
+
+
 
 
 var pike = new CookieStore('1st and Pike', 23, 65, 6.3);
