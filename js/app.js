@@ -27,6 +27,8 @@ CookieStore.prototype.genHourlySales = function(){
 };
 
 CookieStore.prototype.renderHours = function(){
+  var blankEle = document.createElement('td');
+  storeTable.appendChild(blankEle);
   for(var i = 0; i < storeHours.length; i++){
     var thEle = document.createElement('th');
     thEle.textContent = storeHours[i];
@@ -36,8 +38,11 @@ CookieStore.prototype.renderHours = function(){
 
 CookieStore.prototype.renderSales = function(){
   var trEle = document.createElement('tr');
+  var tdEle = document.createElement('td');
+  tdEle.textContent = this.location;
+  trEle.appendChild(tdEle);
   for(var i = 0; i < this.hourlySales.length; i++){
-    var tdEle = document.createElement('td');
+    tdEle = document.createElement('td');
     tdEle.textContent = this.hourlySales[i];
     trEle.appendChild(tdEle);
   }
@@ -48,13 +53,15 @@ function handleStoreInput(event){
   event.preventDefault();
   console.log('form input recieved');
   var formEle = event.target;
-  var newStore = new CookieStore(formEle.locationin.value, formEle.mincustin.value, formEle.maxcustin.value, formEle.cookiesin.value);
+  var newStore = new CookieStore(formEle.location.value, parseInt(formEle.minCust.value), parseInt(formEle.maxCust.value), parseFloat(formEle.avgCookie.value));
   console.log(newStore);
+  newStore.genHourlySales();
   newStore.renderSales();
 }
 
 var newStoreEle = document.getElementById('add-store');
 newStoreEle.addEventListener('submit', handleStoreInput);
+
 
 var pike = new CookieStore('1st and Pike', 23, 65, 6.3);
 var seaTac = new CookieStore('SeaTac Airport', 3, 24, 1.2);
